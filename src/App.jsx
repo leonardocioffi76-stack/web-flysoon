@@ -54,7 +54,7 @@ export default function App() {
     ? paquetes 
     : paquetes.filter(p => p.categoria === filtroDestino);
 
-  const telefonoWhatsApp = '549223000000'; // Actualizar con el número real de la agencia
+  const telefonoWhatsApp = '5492236080835'; // Actualizar con el número real de la agencia
 
   const handleConsultarWhatsApp = (tituloPaquete) => {
     const mensaje = encodeURIComponent(`Hola Flysoon Viajes! 👋 Me interesa recibir más información y asesoramiento sobre el paquete: *${tituloPaquete}*. ¿Me podrían dar detalles?`);
