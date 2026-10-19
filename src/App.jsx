@@ -219,7 +219,9 @@ export default function App() {
                 <div className="p-5 pt-0 flex items-center justify-between border-t border-slate-700/60 mt-4 pt-4">
                   <div>
                     <span className="text-[10px] text-slate-400 font-semibold block uppercase">Precio final</span>
-                    <span className="font-black text-white text-lg">{paquete.precio}</span>
+                    <span className="font-black text-white text-lg">
+                      {paquete.precio} {paquete.categoria === 'Internacional' ? 'USD' : 'ARS'}
+                    </span>
                   </div>
                   <button
                     onClick={() => handleConsultarWhatsApp(paquete.titulo)}
