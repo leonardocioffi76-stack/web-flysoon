@@ -61,6 +61,16 @@ export default function App() {
     window.open(`https://wa.me/${telefonoWhatsApp}?text=${mensaje}`, '_blank');
   };
 
+  // Función para formatear el precio con puntos si es numérico
+  const formatearPrecio = (precioTexto) => {
+    // Intenta limpiar caracteres que no sean números
+    const numero = Number(String(precioTexto).replace(/[^0-9]/g, ''));
+    if (!isNaN(numero) && numero > 0) {
+      return numero.toLocaleString('es-AR');
+    }
+    return precioTexto; // Si por alguna razón escribieron texto plano, lo devuelve tal cual
+  };
+
   return (
     <div className="min-h-screen bg-slate-900 text-slate-100 font-sans selection:bg-blue-600 selection:text-white">
       
@@ -220,7 +230,7 @@ export default function App() {
                   <div>
                     <span className="text-[10px] text-slate-400 font-semibold block uppercase">Precio final</span>
                     <span className="font-black text-white text-lg">
-                      {paquete.precio} {paquete.categoria === 'Internacional' ? 'USD' : 'ARS'}
+                      {formatearPrecio(paquete.precio)} {paquete.categoria === 'Internacional' ? 'USD' : 'ARS'}
                     </span>
                   </div>
                   <button
